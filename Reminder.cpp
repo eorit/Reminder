@@ -579,14 +579,14 @@ void read_datafile(std::multimap <int, std::string>* ROW_DATABASE) { //old read_
     std::ifstream data_read;
     data_read.open("DATA.txt");
     if (!data_read.is_open()) { // если файл не открыт
-        std::cout << "Файл \"DATA.TXT\" не может быть открыт!" << std::endl; // сообщить об этом
+        std::cout << "Файл \"DATA.TXT\" не может быть открыт!" << std::endl;
     }
     else {
         while (!data_read.eof()) {
             data_read >> sDATE;
             //std::cout<< sDATE;
             generate_date(&DateTemp, sDATE);
-            DATE = get_iDate(&DateTemp)/MASK_YEAR; /// цифровой форамт даты перевести во float, так, что бы год был после запятой. тогда посик по дням/месяцам будет верен и не будет потери даннхы для расчета возраста
+            DATE = get_iDate(&DateTemp)/MASK_YEAR; 
             //std::cout<< DATA<<std::endl;
             std::getline(data_read, FIRST_SECOND_NAME);
             //std::cout<< FIRST_SECOND_NAME<<std::endl;
